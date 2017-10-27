@@ -93,3 +93,11 @@
 .syntax--none {
   color: @syntax-text-color;
 }
+
+.editor, atom-text-editor::shadow {
+  .bracket-matcher {
+    position: absolute;
+    border-bottom: 1px solid @syntax-color-matching-brackets;
+    background-color: fade(@syntax-color-matching-brackets, 10%);
+  }
+}
