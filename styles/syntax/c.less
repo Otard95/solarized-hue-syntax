@@ -1,5 +1,19 @@
 .syntax--source.syntax--c,
 .syntax--source.syntax--cpp {
+  .syntax--bracket {
+    color: @syntax-color-brackets;
+    &.syntax--round {
+      color: lighten(desaturate(@syntax-color-brackets, 60%), 5%);
+    }
+    &.syntax--curly {
+      color: darken(@syntax-color-brackets, 20%);
+    }
+  }
+  .syntax--definition {
+    &.syntax--parameters {
+      color: lighten(desaturate(@syntax-color-brackets, 60%), 5%);
+    }
+  }
   .syntax--meta.syntax--preprocessor {
     color: @red;
   }
@@ -22,8 +36,11 @@
   .syntax--entity {
     color: @syntax-text-color;
 
-    &.syntax--name.syntax--function.syntax--preprocessor {
-      color: @red;
+    &.syntax--name.syntax--function {
+      color: @syntax-color-function;
+      &.syntax--preprocessor {
+        color: @red;
+      }
     }
   }
   .syntax--support.syntax--type {
@@ -34,6 +51,7 @@
     }
   }
   .syntax--variable {
+    color: @syntax-color-variable;
     &.syntax--other.syntax--dot-access {
       color: @syntax-text-color;
     }
